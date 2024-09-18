@@ -1,11 +1,12 @@
 import { Text, View } from "react-native";
-import { AirplaneIcon } from "../../icons/Icons";
+import { IonIcon } from "../../icons/Icons";
 
 export const HomeScreen = () => {
   return (
     <View>
         <Text>HomeScreen</Text>
-        <AirplaneIcon />
+        <IonIcon name="airplane-outline" />
+        <Text>After</Text>
     </View>
   );
 };

@@ -7,7 +7,7 @@ export type RootStackParams = {
 
 const Stack = createStackNavigator<RootStackParams>();
 
-export const Navigation = () => {
+export const Navigator = () => {
   return (
     <Stack.Navigator
         screenOptions={{
