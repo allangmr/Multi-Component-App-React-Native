@@ -1,9 +1,9 @@
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import { globalStyles } from "../../../config/theme/theme";
-import { Title } from "../../components/ui/title";
+import { Title } from "../../components/ui/Title";
+import { MenuItem } from "../../components/ui/MenuItem";
 
-export const menuItems = [
-  // 01-animationMenuItems
+const animationMenuItems = [
   {
     name: 'Animation 101',
     icon: 'cube-outline',
@@ -14,9 +14,9 @@ export const menuItems = [
     icon: 'albums-outline',
     component: 'Animation102Screen',
   },
+];
 
-
-  // 02-menuItems
+const menuItems = [
   {
     name: 'Pull to refresh',
     icon: 'refresh-outline',
@@ -47,8 +47,9 @@ export const menuItems = [
     icon: 'flask-outline',
     component: 'ChangeThemeScreen',
   },
+];
 
-  // 03- uiMenuItems
+const uiMenuItems = [
   {
     name: 'Switches',
     icon: 'toggle-outline',
@@ -72,8 +73,31 @@ export const HomeScreen = () => {
       <View style={[globalStyles.globalMargin]}>
         <ScrollView>
           <Title text="Menu Items" safe />
-          {menuItems.map(item => (
-            <Text key={item.component}>{item.name}</Text>
+          {animationMenuItems.map((item, index) => (
+            <MenuItem
+              key={item.component}
+              {...item}
+              isFirst={index === 0}
+              isLast={index === animationMenuItems.length - 1}
+            />
+          ))}
+          <View style={{marginTop: 30}} />
+          {menuItems.map((item, index) => (
+            <MenuItem
+              key={item.component}
+              {...item}
+              isFirst={index === 0}
+              isLast={index === menuItems.length - 1}
+            />
+          ))}
+          <View style={{marginTop: 30}} />
+          {uiMenuItems.map((item, index) => (
+            <MenuItem
+              key={item.component}
+              {...item}
+              isFirst={index === 0}
+              isLast={index === uiMenuItems.length - 1}
+            />
           ))}
         </ScrollView>
       </View>
