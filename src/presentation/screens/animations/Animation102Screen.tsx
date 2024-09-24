@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { Animated, PanResponder, StyleSheet, View } from "react-native";
-import { colors, globalStyles } from "../../../config/theme/theme";
+import { colors } from "../../../config/theme/theme";
 
 export const Animation102Screen = () => {
     const pan = useRef(new Animated.ValueXY()).current;
