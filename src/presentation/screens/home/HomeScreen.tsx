@@ -1,7 +1,7 @@
 import { ScrollView, View } from "react-native";
 import { globalStyles } from "../../../config/theme/theme";
-import { MenuItem } from "../../components/ui/MenuItem";
 import { Title } from "../../components/ui/title";
+import { MenuSection } from "../../components/ui/MenuSection";
 
 const animationMenuItems = [
   {
@@ -73,32 +73,9 @@ export const HomeScreen = () => {
       <View style={[globalStyles.globalMargin]}>
         <ScrollView>
           <Title text="Menu Items" safe />
-          {animationMenuItems.map((item, index) => (
-            <MenuItem
-              key={item.component}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === animationMenuItems.length - 1}
-            />
-          ))}
-          <View style={{marginTop: 30}} />
-          {menuItems.map((item, index) => (
-            <MenuItem
-              key={item.component}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === menuItems.length - 1}
-            />
-          ))}
-          <View style={{marginTop: 30}} />
-          {uiMenuItems.map((item, index) => (
-            <MenuItem
-              key={item.component}
-              {...item}
-              isFirst={index === 0}
-              isLast={index === uiMenuItems.length - 1}
-            />
-          ))}
+          <MenuSection items={animationMenuItems} />
+          <MenuSection items={menuItems} />
+          <MenuSection items={uiMenuItems} />
         </ScrollView>
       </View>
     </View>
