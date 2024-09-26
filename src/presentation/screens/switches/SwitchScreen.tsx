@@ -5,8 +5,6 @@ import { useState } from "react";
 import { Separator } from "../../components/ui/Separator";
 
 export const SwitchScreen = () => {
-    // const [isEnabled, setIsEnabled] = useState(false);
-    // const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
     const [state, setState] = useState({
         isActive: true,
@@ -17,11 +15,6 @@ export const SwitchScreen = () => {
     return (
         <CustomView style={{marginTop: 100, paddingHorizontal: 10}}>
             <Card>
-                {/* <CustomSwitch
-                    isOn={isEnabled}
-                    onChange={toggleSwitch}
-                    text="Switch 1"
-                /> */}
                 <CustomSwitch
                     isOn={state.isActive}
                     onChange={(value) => setState({...state, isActive: value})}
