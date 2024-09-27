@@ -29,6 +29,17 @@ export const AlertScreen = () => {
             {text: 'OK', onPress: () => console.log('OK Pressed')},
           ],  {cancelable: true, onDismiss: () => console.log('onDismiss')});
     };
+
+    const showPrompt = () => {
+        // Native Code - Does not work in android
+        Alert.prompt('Enter Your Name', 'Enter Your Name', (text: string) =>
+          console.log('You entered ' + text),
+          'secure-text',
+          'default',
+          'number-pad'
+        );
+    };
+
     return (
         <CustomView>
             <Title safe text="Alerts" />
@@ -36,7 +47,7 @@ export const AlertScreen = () => {
             <Separator style={{marginVertical: 20}} />
             <Button text="Show Alert - 3 Buttons" onPress={createThreeButtonAlert} />
             <Separator style={{marginVertical: 20}} />
-            <Button text="Prompt - Input" onPress={createThreeButtonAlert} />
+            <Button text="Prompt - Input" onPress={showPrompt} />
         </CustomView>
     );
 };
