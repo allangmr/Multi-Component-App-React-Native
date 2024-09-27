@@ -1,7 +1,7 @@
 import { ScrollView, View } from "react-native";
 import { globalStyles } from "../../../config/theme/theme";
-import { Title } from "../../components/ui/Title";
 import { MenuItem } from "../../components/ui/MenuItem";
+import { Title } from "../../components/ui/title";
 
 const animationMenuItems = [
   {
