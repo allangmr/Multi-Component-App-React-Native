@@ -3,6 +3,7 @@ import { Button } from "../../components/ui/Button";
 import { CustomView } from "../../components/ui/CustomView";
 import { Separator } from "../../components/ui/Separator";
 import { Title } from "../../components/ui/title";
+import { showPrompt } from "../../../config/adapters/prompt.adapter";
 
 export const AlertScreen = () => {
     const createTwoButtonAlert = () => {
@@ -29,15 +30,26 @@ export const AlertScreen = () => {
             {text: 'OK', onPress: () => console.log('OK Pressed')},
           ],  {cancelable: true, onDismiss: () => console.log('onDismiss')});
     };
-
-    const showPrompt = () => {
-        // Native Code - Does not work in android
-        Alert.prompt('Enter Your Name', 'Enter Your Name', (text: string) =>
-          console.log('You entered ' + text),
-          'secure-text',
-          'default',
-          'number-pad'
-        );
+    const onShowPrompt = () => {
+        showPrompt({
+            message: 'Prompt Title',
+            description: 'Prompt Description',
+            buttons: [
+                {
+                    text: 'Cancel',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'destructive',
+                },
+                {
+                    text: 'OK',
+                    onPress: () => console.log('OK Pressed'),
+                },
+            ],
+            prompType: 'default',
+            cancelable: true,
+            defaultValue: 'example defaultValue',
+            placeholder: 'example placeholder',
+        });
     };
 
     return (
@@ -47,7 +59,7 @@ export const AlertScreen = () => {
             <Separator style={{marginVertical: 20}} />
             <Button text="Show Alert - 3 Buttons" onPress={createThreeButtonAlert} />
             <Separator style={{marginVertical: 20}} />
-            <Button text="Prompt - Input" onPress={showPrompt} />
+            <Button text="Prompt - Input" onPress={onShowPrompt} />
         </CustomView>
     );
 };
