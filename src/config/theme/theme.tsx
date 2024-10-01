@@ -31,6 +31,16 @@ export const globalStyles = StyleSheet.create({
     color: colors.text,
   },
 
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    borderColor: colors.separator,
+    borderRadius: 10,
+    color: colors.text,
+  },
+
   mainContainer: {
     flex: 1,
     backgroundColor: colors.background,
