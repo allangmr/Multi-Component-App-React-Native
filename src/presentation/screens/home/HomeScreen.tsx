@@ -74,8 +74,8 @@ export const HomeScreen = () => {
         <ScrollView>
           <Title text="Menu Items" safe />
           <MenuSection items={animationMenuItems} />
-          <MenuSection items={menuItems} />
           <MenuSection items={uiMenuItems} />
+          <MenuSection items={menuItems} />
         </ScrollView>
       </View>
     </View>
