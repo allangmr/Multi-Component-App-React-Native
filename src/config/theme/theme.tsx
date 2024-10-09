@@ -19,6 +19,26 @@ export const colors: ThemeColors = {
   separator: "#cecece",
 };
 
+export const lightColors: ThemeColors = {
+  primary: "#5856D6",
+  text: "black",
+
+  background: "#F3F2F7",
+  cardBackground: "white",
+  buttonTextColor: "white",
+  separator: "#cecece",
+};
+
+export const darkColors: ThemeColors = {
+  primary: "#5856D6",
+  text: "white",
+
+  background: "#090909",
+  cardBackground: "#2d2d2d",
+  buttonTextColor: "white",
+  separator: "#cecece",
+};
+
 export const globalStyles = StyleSheet.create({
   title: {
     fontSize: 30,
