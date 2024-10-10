@@ -6,10 +6,10 @@ import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
 export const ChangeThemeScreen = () => {
-  const { setTheme } = useContext(ThemeContext);
+  const { setTheme, currentTheme } = useContext(ThemeContext);
   return (
     <CustomView>
-        <Title text='Change Theme' safe />
+        <Title text={`Change Theme: ${currentTheme}`} safe />
         <Button text='Light' onPress={() => setTheme('light')} />
         <Separator />
         <Button text='Dark' onPress={() => setTheme('dark')} />

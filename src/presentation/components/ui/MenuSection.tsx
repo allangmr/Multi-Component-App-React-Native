@@ -1,6 +1,8 @@
 import { StyleProp, View, ViewStyle } from "react-native";
 import { MenuItem } from "./MenuItem";
-import { Separator } from "./Separator";
+// import { Separator } from "./Separator";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface Props {
     items: Items[];
@@ -14,6 +16,7 @@ interface Items {
 }
 
 export const MenuSection = ({items, style}: Props) => {
+  const {colors} = useContext(ThemeContext);
     return (
         <View style={{marginVertical: 10}}>
           {items.map((item, index) => {
@@ -23,14 +26,14 @@ export const MenuSection = ({items, style}: Props) => {
               <View
                 key={item.component}
                 style={[
-                  { backgroundColor: 'white',},
+                  { backgroundColor: colors.background},
                   isFirst && { borderTopLeftRadius: 10, borderTopRightRadius: 10, paddingTop: 10 },
                   isLast && { borderBottomLeftRadius: 10, borderBottomRightRadius: 10, paddingBottom: 10 },
                   style,
                 ]}
               >
                 <MenuItem {...item} isFirst={isFirst} isLast={isLast} />
-                {!isLast && <Separator style={{ marginVertical: 5, marginHorizontal: 10 }} />}
+                {/* {!isLast && <Separator style={{ marginVertical: 5, marginHorizontal: 10 }} />} */}
               </View>
             );
           })}

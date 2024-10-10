@@ -4,13 +4,15 @@ import { CustomView } from "../../components/ui/CustomView";
 import { Title } from "../../components/ui/title";
 import { houses } from "../../../mocks/houses";
 import { SubTitle } from "../../components/ui/Subtitle";
-import { colors } from "../../../config/theme/theme";
 import { Separator } from "../../components/ui/Separator";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 export const CustomSectionListScreen = () => {
     const {height} = useWindowDimensions();
     const {top} = useSafeAreaInsets();
+    const {colors} = useContext(ThemeContext);
   return (
     <CustomView>
         <Title text="Custom Section List" />
