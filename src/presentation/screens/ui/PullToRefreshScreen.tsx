@@ -20,7 +20,7 @@ export const PullToRefreshScreen = () => {
   return (
     <ScrollView
         refreshControl={<RefreshControl refreshing={isRefreshing} onRefresh={onRefresh} colors={[colors.primary, 'red', 'green']} progressViewOffset={top} />}
-        style={[globalStyles.mainContainer, globalStyles.globalMargin]}
+        style={[globalStyles.mainContainer, globalStyles.globalMargin, {backgroundColor: colors.background}]}
     >
         <Title text="Pull to refresh" safe />
     </ScrollView>

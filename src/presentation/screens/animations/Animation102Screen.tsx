@@ -25,7 +25,7 @@ export const Animation102Screen = () => {
         },
       });
       return (
-        <View style={styles.container}>
+        <View style={[styles.container, {backgroundColor: colors.background}]}>
           <Animated.View
             {...panResponder.panHandlers}
             style={[pan.getLayout(), styles.box, {backgroundColor: colors.primary}]}

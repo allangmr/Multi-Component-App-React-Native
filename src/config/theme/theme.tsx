@@ -7,6 +7,8 @@ export interface ThemeColors {
   cardBackground: string;
   buttonTextColor: string;
   separator: string;
+  inputBorderColor: string;
+  inputColor: string;
 }
 
 export const colors: ThemeColors = {
@@ -17,6 +19,8 @@ export const colors: ThemeColors = {
   cardBackground: "white",
   buttonTextColor: "white",
   separator: "#F3F2F7",
+  inputBorderColor: "#333",
+  inputColor: "#333",
 };
 
 export const lightColors: ThemeColors = {
@@ -27,6 +31,8 @@ export const lightColors: ThemeColors = {
   cardBackground: "white",
   buttonTextColor: "white",
   separator: "#F3F2F7",
+  inputBorderColor: "#333",
+  inputColor: "#333",
 };
 
 export const darkColors: ThemeColors = {
@@ -37,6 +43,8 @@ export const darkColors: ThemeColors = {
   cardBackground: "#2d2d2d",
   buttonTextColor: "white",
   separator: "#F3F2F7",
+  inputBorderColor: "#F3F2F7",
+  inputColor: "#c7c6ca",
 };
 
 export const globalStyles = StyleSheet.create({

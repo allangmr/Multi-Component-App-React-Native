@@ -20,7 +20,7 @@ export const CustomSectionListScreen = () => {
             <SectionList
                 sections={houses}
                 keyExtractor={(item, index) => item + index}
-                renderItem={({ item }) => <Text style={{marginVertical: 12}}>{item}</Text>}
+                renderItem={({ item }) => <Text style={{marginVertical: 12, color: colors.text}}>{item}</Text>}
                 showsVerticalScrollIndicator={false}
                 renderSectionHeader={({section}) => <SubTitle backgroundColor={colors.cardBackground} text={section.title} />}
                 stickySectionHeadersEnabled
