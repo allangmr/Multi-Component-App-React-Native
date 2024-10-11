@@ -19,7 +19,7 @@ export const ThemeProvider = ({children}: PropsWithChildren) => {
     };
 
     return (
-        <ThemeContext.Provider value={{currentTheme: currentTheme, isDark: (currentTheme === 'light'), colors: (currentTheme === 'light' ? lightColors : darkColors), setTheme: setTheme}}>
+        <ThemeContext.Provider value={{currentTheme: currentTheme, isDark: (currentTheme !== 'light'), colors: (currentTheme === 'light' ? lightColors : darkColors), setTheme: setTheme}}>
             {children}
         </ThemeContext.Provider>
     );
