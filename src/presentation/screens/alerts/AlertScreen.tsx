@@ -4,8 +4,11 @@ import { CustomView } from "../../components/ui/CustomView";
 import { Separator } from "../../components/ui/Separator";
 import { Title } from "../../components/ui/title";
 import { showPrompt } from "../../../config/adapters/prompt.adapter";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 export const AlertScreen = () => {
+    const {isDark} = useContext(ThemeContext);
     const createTwoButtonAlert = () => {
         Alert.alert('Alert Title', 'My Alert Msg', [
             {
@@ -14,7 +17,11 @@ export const AlertScreen = () => {
             style: 'destructive',
             },
             {text: 'OK', onPress: () => console.log('OK Pressed')},
-        ]);
+        ],
+        {
+            userInterfaceStyle: isDark ? 'dark' : 'light',
+        }
+        );
     };
     const createThreeButtonAlert = () => {
         Alert.alert('Alert Title', 'My Alert Msg', [
@@ -28,7 +35,7 @@ export const AlertScreen = () => {
               style: 'cancel',
             },
             {text: 'OK', onPress: () => console.log('OK Pressed')},
-          ],  {cancelable: true, onDismiss: () => console.log('onDismiss')});
+          ],  {cancelable: true, onDismiss: () => console.log('onDismiss'), userInterfaceStyle: isDark ? 'dark' : 'light'});
     };
     const onShowPrompt = () => {
         showPrompt({

@@ -10,6 +10,7 @@ import { CustomSectionListScreen } from '../screens/ui/CustomSectionListScreen';
 import { ModalScreen } from '../screens/ui/ModalScreen';
 import { InfiniteScrollScreen } from '../screens/ui/InfiniteScrollScreen';
 import { SlidesScreen } from '../screens/ui/SlidesScreen';
+import { ChangeThemeScreen } from '../screens/theme/ChangeThemeScreen';
 
 
 export type RootStackParams = {
@@ -24,6 +25,7 @@ export type RootStackParams = {
     ModalScreen: undefined;
     InfiniteScrollScreen: undefined;
     SlidesScreen: undefined;
+    ChangeThemeScreen: undefined;
 }
 
 const Stack = createStackNavigator<RootStackParams>();
@@ -46,6 +48,7 @@ export const Navigator = () => {
         <Stack.Screen name="ModalScreen" component={ModalScreen} />
         <Stack.Screen name="InfiniteScrollScreen" component={InfiniteScrollScreen} />
         <Stack.Screen name="SlidesScreen" component={SlidesScreen} />
+        <Stack.Screen name="ChangeThemeScreen" component={ChangeThemeScreen} />
     </Stack.Navigator>
   );
 };

@@ -1,8 +1,9 @@
 import { CustomView } from "../../components/ui/CustomView";
 import { Card } from "../../components/ui/Card";
 import { CustomSwitch } from "../../components/ui/CustomSwitch";
-import { useState } from "react";
 import { Separator } from "../../components/ui/Separator";
+import { useState } from "react";
+
 
 export const SwitchScreen = () => {
 
@@ -13,7 +14,7 @@ export const SwitchScreen = () => {
     });
 
     return (
-        <CustomView style={{marginTop: 100, paddingHorizontal: 10}}>
+        <CustomView style={[{paddingTop: 100, paddingHorizontal: 10}]}>
             <Card>
                 <CustomSwitch
                     isOn={state.isActive}
